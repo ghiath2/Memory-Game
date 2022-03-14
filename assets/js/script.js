@@ -47,9 +47,33 @@ cards.forEach((card, index) => {
       
     // Add Class is-flipped
   selectedCard.classList.add('is-flipped');
-  }
 
+   // Collect All Flipped Cards
+   let allFlippedCards = cards.filter(flippedBlock => flippedBlock.classList.contains('is-flipped'));
+
+   // If Theres Two Selected Cards
+   if (allFlippedCards.length === 2) {
+       // Stop Clicking Function
+    stopClicking();
+
+  }
+  }
   
+  // Stop Clicking Function
+function stopClicking() {
+
+    // Add Class No Clicking on Cards Container
+    cardsContainer.classList.add('no-clicking');
+  
+    // Wait Duration
+    setTimeout(() => {
+  
+      // Remove Class No Clicking After The Duration
+      cardsContainer.classList.remove('no-clicking');
+  
+    }, duration);
+  
+  }
 
  // Shuffle Function
 function shuffle(array) {
