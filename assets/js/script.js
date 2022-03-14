@@ -49,6 +49,8 @@ cards.forEach((card, index) => {
   selectedCard.classList.add('is-flipped');
   }
 
+  
+
  // Shuffle Function
 function shuffle(array) {
 
