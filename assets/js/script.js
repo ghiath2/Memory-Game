@@ -20,9 +20,9 @@ let cardsContainer = document.querySelector(".memory-game-cards");
 let cards = Array.from(cardsContainer.children);
 
 let orderRange = [...Array(cards.length).keys()];
-console.log(orderRange);
+
 shuffle(orderRange);
-console.log(orderRange);
+
 
 // Add Order Css Property To Game Cards
 
@@ -30,8 +30,24 @@ cards.forEach((card, index) => {
 
     // Add CSS Order Property
     card.style.order = orderRange[index];
+
+    // Add Click Event
+  card.addEventListener('click', function () {
+
+    // Trigger The Flip Card Function
+    flipCard(card);
+
+  });
   
   });
+
+  // Flip Cards Function
+
+  function flipCard(selectedCard) {
+      
+    // Add Class is-flipped
+  selectedCard.classList.add('is-flipped');
+  }
 
  // Shuffle Function
 function shuffle(array) {
