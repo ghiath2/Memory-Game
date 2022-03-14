@@ -12,3 +12,13 @@ document.querySelector(".control-button span").onclick = function () {
 
     document.querySelector(".control-button").remove();
 };
+
+let duration = 1000;
+
+let cardsContainer = document.querySelector(".memory-game-cards");
+
+let cards = Array.from(cardsContainer.children);
+
+let orderRange = [...Array(cards.length).keys()];
+
+console.log(orderRange);
