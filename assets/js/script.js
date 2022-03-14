@@ -56,6 +56,9 @@ cards.forEach((card, index) => {
        // Stop Clicking Function
     stopClicking();
 
+     // Check Matched Block Function
+     checkMatchedCards(allFlippedCards[0], allFlippedCards[1]);
+
   }
   }
   
@@ -73,7 +76,42 @@ function stopClicking() {
   
     }, duration);
   
+  } 
+
+  // Check Matched Cards
+function checkMatchedCards(firstCard, secondCard) {
+
+    let triesElement = document.querySelector('.tries span');
+  
+    if (firstCard.dataset.cities === secondCard.dataset.cities) {
+  
+      firstCard.classList.remove('is-flipped');
+      secondCard.classList.remove('is-flipped');
+  
+      firstCard.classList.add('has-match');
+      secondCard.classList.add('has-match');
+  
+      document.getElementById('success').play();
+  
+    } else {
+  
+      triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+  
+      setTimeout(() => {
+  
+        firstCard.classList.remove('is-flipped');
+        secondCard.classList.remove('is-flipped');
+  
+      }, duration);
+  
+      document.getElementById('fail').play();
+  
+    }
+  
   }
+
+ 
+  
 
  // Shuffle Function
 function shuffle(array) {
