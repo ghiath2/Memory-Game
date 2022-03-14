@@ -91,7 +91,7 @@ function checkMatchedCards(firstCard, secondCard) {
       firstCard.classList.add('has-match');
       secondCard.classList.add('has-match');
   
-      document.getElementById('success').play();
+      document.getElementById('win').play();
   
     } else {
   
@@ -104,7 +104,7 @@ function checkMatchedCards(firstCard, secondCard) {
   
       }, duration);
   
-      document.getElementById('fail').play();
+      document.getElementById('lose').play();
   
     }
   
