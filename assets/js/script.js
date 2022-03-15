@@ -46,6 +46,8 @@
 
   let orderRange = [...Array(cards.length).keys()];
 
+  shuffle(orderRange);
+
 // Add Order Css Property To Game Cards
 
 cards.forEach((card, index) => {
